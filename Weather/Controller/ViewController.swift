@@ -108,10 +108,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     seal.reject(response.error!)
                 }
                 
-                
+                print(response)
                 let currentWeather = CurrentWeather()
                 let weathers = JSON(response.data!).array
-                print(weathers![0])
                 currentWeather.cityKey = cityKey
                 currentWeather.cityInfoName = cityName
                 currentWeather.weatherText = weathers![0]["WeatherText"].stringValue
